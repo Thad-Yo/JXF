@@ -1,4 +1,3 @@
 <?php
-header("Content-Type:text; charset=gb2312");
-define("TOKEN","jxf");
+header('content-type:text');
 echo '你好，小翠!';
