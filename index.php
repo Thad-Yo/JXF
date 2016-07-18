@@ -1,2 +1,2 @@
 <?php
-echo '<strong>Hello, SAE!</strong>';
+echo '<strong>你好，小翠!</strong>';
