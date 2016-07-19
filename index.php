@@ -1,5 +1,5 @@
 <?php
-header('content-type:text');
+// header('content-type:text');
 $timestamp = $_GET['timestamp'];
 $nonce = $_GET['nonce'];
 $token = 'jxf';
