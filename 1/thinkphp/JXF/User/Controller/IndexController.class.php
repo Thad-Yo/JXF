@@ -19,6 +19,6 @@ class IndexController extends Controller {
         }
     }
     public function show(){
-    	echo 'jxf';
+    	echo 'jxf2';
     }
 }
