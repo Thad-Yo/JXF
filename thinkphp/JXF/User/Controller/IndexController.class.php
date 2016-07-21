@@ -7,6 +7,8 @@ class IndexController extends Controller {
         $nonce = $_GET['nonce'];
         $token = 'jxf';
         $timestamp = $_GET['timestamp'];
+        $echostr = $_GET['echostr'];
+        $signature = $_GET['signature'];
         //形成数组，按子典排序
         $array = array();
         $array = array($nonce,$timestamp,$token);
