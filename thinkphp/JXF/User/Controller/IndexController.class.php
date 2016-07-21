@@ -43,7 +43,7 @@ class IndexController extends Controller {
 		//判断该数据包是否是订阅的事件推送
 		if(strtolower($postObj->MsgType)=='event'){
 			//如果是关注subscribe事件
-			if(strtolower($postObj->Event == 'subscribe')){
+			if(strtolower($postObj->Event) == 'subscribe'){
 				//回复用户消息
 				$toUser = $postObj->FromUserName;
 				$FromUser = $postObj->ToUserName;
