@@ -49,7 +49,7 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$time = time();
 				$MsgType = 'text';
-				$Content = '欢迎关注我们的公众账号';
+				$Content = '大海提子，畅销依山半岛多年，欢迎您的品尝！';
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
