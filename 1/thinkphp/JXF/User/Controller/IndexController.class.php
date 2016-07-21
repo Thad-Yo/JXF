@@ -57,7 +57,7 @@ class IndexController extends Controller {
 							<MsgType><![CDATA[%s]]></MsgType>
 							<Content><![CDATA[%s]]></Content>
 							</xml>';
-				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$content);
+				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
 				echo $info;
 			}
 		}
