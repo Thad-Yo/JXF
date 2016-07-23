@@ -50,7 +50,7 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$time = time();
 				$MsgType = 'text';
-				$Content = '公众账号'.$postObj->ToUserName,'\n微信用户的openid'.$postObj->FromUserName.'\n回复消息格式:'.$temstr;
+				$Content = '公众账号'.$postObj->ToUserName.',\n微信用户的openid'.$postObj->FromUserName.'\n回复消息格式:'.$temstr;
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
