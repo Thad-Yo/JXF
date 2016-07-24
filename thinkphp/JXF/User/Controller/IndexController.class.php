@@ -76,7 +76,8 @@ class IndexController extends Controller {
 				$time = time();
 				$Content = '18578665217';
 				$MsgType = 'text';
-				echo '122';
+				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
+				echo $info;
 			}
 		}
     }
