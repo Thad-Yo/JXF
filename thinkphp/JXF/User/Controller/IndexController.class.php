@@ -50,7 +50,7 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$time = time();
 				$MsgType = 'text';
-				$Content = '我的姐姐胖小音1';
+				$Content = '我的姐姐胖小音';
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -64,11 +64,6 @@ class IndexController extends Controller {
 		}
 		if(strtolower($postObj->MsgType)=='text'){
 			if($postObj->Content=='tel'){
-				$toUser = $postObj->FromUserName;
-				$FromUser = $postObj->ToUserName;
-				$time = time();
-				$MsgType = 'text';
-				$Content = '我的姐姐胖小音2';
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -76,6 +71,11 @@ class IndexController extends Controller {
 							<MsgType><![CDATA[%s]]></MsgType>
 							<Content><![CDATA[%s]]></Content>
 							</xml>';
+				$FromUser = $postObj->ToUserName;
+				$toUser = $postObj->FromUserName;
+				$time = time();
+				$Content = '18578665217';
+				$MsgType = 'text';
 				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
 				echo $info;
 			}
