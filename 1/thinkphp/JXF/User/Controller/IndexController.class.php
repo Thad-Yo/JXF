@@ -67,7 +67,10 @@ class IndexController extends Controller {
 				case '电话':
 					$Content = '18578665217';
 					break;
-				case 'QQ or qq':
+				case 'QQ':
+					$Content = '736602265';
+					break;				
+				case 'qq':
 					$Content = '736602265';
 					break;
 				default:
