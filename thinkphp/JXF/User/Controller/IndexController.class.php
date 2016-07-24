@@ -71,7 +71,7 @@ class IndexController extends Controller {
 					$Content = '736602265';
 					break;				
 				case 'qq':
-					$Content = '736602265';
+					$Content = $postObj->FromUserName;
 					break;
 				default:
 					$Content = '这位朋友你在讲啥子？';
