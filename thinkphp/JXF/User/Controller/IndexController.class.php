@@ -71,7 +71,7 @@ class IndexController extends Controller {
 					$Content = '736602265';
 					break;				
 				case 'hupu':
-					$Content = <a href='http://nba.hupu.com/'>虎扑</a>;
+					$Content = '<a href=''http://nba.hupu.com/''>虎扑</a>';
 					break;
 				default:
 					$Content = '这位朋友你在讲啥子？';
