@@ -76,7 +76,6 @@ class IndexController extends Controller {
 				$time = time();
 				$Content = '18578665217';
 				$MsgType = 'text';
-				ob_clean();
 				echo '122';
 			}
 		}
