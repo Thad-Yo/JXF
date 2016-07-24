@@ -68,7 +68,7 @@ class IndexController extends Controller {
 					$Content = '18578665217';
 					break;
 				case 'QQ':
-					$Content = '746602265';
+					$Content = '736602265';
 					break;
 				default:
 					$Content = '这位朋友你在讲啥子？';
