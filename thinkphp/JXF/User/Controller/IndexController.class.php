@@ -62,5 +62,22 @@ class IndexController extends Controller {
 				echo $info;
 			}
 		}
+		if(strtolower($postObj->MsgType)=='text'){
+			if($postObj->Content=='小音'){
+				$template = '<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							</xml>';
+				$FromUser = $postObj->$ToUserName;
+				$toUser = $postObj->$FromUserName;
+				$time = time();
+				$Content = '小音是个好姐姐';
+				$MsgType = 'text';
+				echo sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
+			}
+		}
     }
 }
