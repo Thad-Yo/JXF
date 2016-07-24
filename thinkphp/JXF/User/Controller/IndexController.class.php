@@ -63,7 +63,17 @@ class IndexController extends Controller {
 			}
 		}
 		if(strtolower($postObj->MsgType)=='text'){
-			if($postObj->Content=='tel'){
+			switch ( trim($postObj->Content) ) {
+				case '电话':
+					$Content = '18578665217';
+					break;
+				case 'QQ':
+					$Content = '746602265';
+					break;
+				default:
+					$Content = '这位朋友你在讲啥子？';
+					break;
+			}
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -74,11 +84,10 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$toUser = $postObj->FromUserName;
 				$time = time();
-				$Content = '18578665217';
+				// $Content = '18578665217';
 				$MsgType = 'text';
 				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
 				echo $info;
-			}
 		}
     }
 }
