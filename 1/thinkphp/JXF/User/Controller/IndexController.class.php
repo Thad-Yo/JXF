@@ -70,8 +70,8 @@ class IndexController extends Controller {
 				case 'QQ':
 					$Content = '736602265';
 					break;				
-				case 'qq':
-					$Content = $postObj->FromUserName;
+				case 'hupu':
+					$Content = <a href='http://nba.hupu.com/'>虎扑</a>;
 					break;
 				default:
 					$Content = '这位朋友你在讲啥子？';
