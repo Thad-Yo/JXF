@@ -50,7 +50,7 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$time = time();
 				$MsgType = 'text';
-				$Content = '我的姐姐胖小音';
+				$Content = '我的姐姐胖小音1';
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -68,7 +68,7 @@ class IndexController extends Controller {
 				$FromUser = $postObj->ToUserName;
 				$time = time();
 				$MsgType = 'text';
-				$Content = '我的姐姐胖小音';
+				$Content = '我的姐姐胖小音2';
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
