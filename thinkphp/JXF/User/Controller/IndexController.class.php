@@ -72,7 +72,7 @@ class IndexController extends Controller {
 			 			  <FromUserName><![CDATA[%s]]></FromUserName>
 			 			  <CreateTime>%s</CreateTime>
 			 			  <MsgType><![CDATA[%s]]></MsgType>
-			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <ArticleCount>1</ArticleCount>
 			 			  <Articles>';
 			
 			 $arr = array(
