@@ -93,7 +93,7 @@ class IndexController extends Controller {
 			}
 			$template .= '</Articles>
 						  </xml>';
-			$info = sprintf($template,$toUser,$FromUser,$time,'news');
+			$info = sprintf($template,$toUser,$FromUser,time(),'news');
 			 	echo $info;
 		}
 			else{
