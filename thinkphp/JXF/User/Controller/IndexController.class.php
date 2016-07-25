@@ -83,14 +83,14 @@ class IndexController extends Controller {
 					'Url'=>'http://www.hupu.com/',
 					),
 				);
-			// foreach ($arr as $key => $value) {
-			// $template .= '<item>
-			// 			  <Title><![CDATA[".$value['title']."]]></Title> 
-			// 			  <Description><![CDATA[".$value['Description']."]]></Description>
-			// 			  <PicUrl><![CDATA[".$value['PicUrl']."]]></PicUrl>
-			// 			  <Url><![CDATA[".$value['Url']."]]></Url>
-			// 			  </item>';
-			// }
+			foreach ($arr as $key => $value) {
+			$template .= '<item>
+						  <Title><![CDATA[".$value['title']."]]></Title> 
+						  <Description><![CDATA[".$value['Description']."]]></Description>
+						  <PicUrl><![CDATA[".$value['PicUrl']."]]></PicUrl>
+						  <Url><![CDATA[".$value['Url']."]]></Url>
+						  </item>';
+			}
 			// $template .= '</Articles>
 			// 			  </xml>';
 			// $info = sprintf($template,$toUser,$FromUser,$time,'news');
