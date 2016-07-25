@@ -63,7 +63,7 @@ class IndexController extends Controller {
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
-		if(strtolower($postObj->MsgType)=='text' && strtolower($postObj->Content) =='tuwen1'){			
+		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='tuwen1'){			
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
 			 $time = time();
