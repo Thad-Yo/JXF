@@ -92,5 +92,33 @@ class IndexController extends Controller {
 				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
 				echo $info;
 		}
+		//用户发送tuwen1关键字的时候，回复一个单图文
+		if(strtolower($postObj->Content) =='tuwen1'){
+			$toUser = $postObj->FromUserName;
+			$FromUser = $postObj->ToUserName;
+			$template =  '<xml>
+						  <ToUserName><![CDATA[toUser]]></ToUserName>
+						  <FromUserName><![CDATA[fromUser]]></FromUserName>
+						  <CreateTime>12345678</CreateTime>
+						  <MsgType><![CDATA[news]]></MsgType>
+						  <ArticleCount>2</ArticleCount>
+						  <Articles>';
+			$arr = array(
+					'title'=>'hupu';
+					'Description'=>'hupu is very yellow';
+					'PicUrl'=>'http://www.hupu.com/';
+
+				);
+			foreach ($arr as $key => $value) {
+			$template .= '<item>
+						  <Title><![CDATA[title1]]></Title> 
+						  <Description><![CDATA[description1]]></Description>
+						  <PicUrl><![CDATA[picurl]]></PicUrl>
+						  <Url><![CDATA[url]]></Url>
+						  </item>';
+			}
+			$template .= '</Articles>
+						  </xml>';
+		}
     }
 }
