@@ -75,14 +75,14 @@ class IndexController extends Controller {
 			 			  <ArticleCount>".count($arr)."</ArticleCount>
 			 			  <Articles>';
 			
-			//  $arr = array(
-			// 		array(
-			// 		'title'=>'hupu',
-			// 		'Description'=>'hupu is very yellow',
-			// 		'PicUrl'=>'http://bbs.hupu.com/16808692.html',
-			// 		'Url'=>'http://www.hupu.com/',
-			// 		),
-			// 	);
+			 $arr = array(
+					array(
+					'title'=>'hupu',
+					'Description'=>'hupu is very yellow',
+					'PicUrl'=>'http://bbs.hupu.com/16808692.html',
+					'Url'=>'http://www.hupu.com/',
+					),
+				);
 			// foreach ($arr as $key => $value) {
 			// $template .= '<item>
 			// 			  <Title><![CDATA[".$value['title']."]]></Title> 
