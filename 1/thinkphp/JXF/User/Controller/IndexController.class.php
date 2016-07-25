@@ -66,15 +66,7 @@ class IndexController extends Controller {
 		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='tuwen1'){			
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
-			 $time = time();
-			 $template =  '<xml>
-			 			  <ToUserName><![CDATA[%s]]></ToUserName>
-			 			  <FromUserName><![CDATA[%s]]></FromUserName>
-			 			  <CreateTime>%s</CreateTime>
-			 			  <MsgType><![CDATA[%s]]></MsgType>
-			 			  <ArticleCount>".count($arr)."</ArticleCount>
-			 			  <Articles>';
-			
+			 $time = time();			
 			 $arr = array(
 					array(
 					'title'=>'hupu',
@@ -83,6 +75,13 @@ class IndexController extends Controller {
 					'Url'=>'http://www.hupu.com/',
 					),
 				);
+		    $template =  '<xml>
+			 			  <ToUserName><![CDATA[%s]]></ToUserName>
+			 			  <FromUserName><![CDATA[%s]]></FromUserName>
+			 			  <CreateTime>%s</CreateTime>
+			 			  <MsgType><![CDATA[%s]]></MsgType>
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <Articles>';
 			foreach ($arr as $k => $v) {
 			$template .= "<item>
 						  <Title><![CDATA[".$v['title']."]]></Title> 
