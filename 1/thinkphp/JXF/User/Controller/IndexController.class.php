@@ -91,10 +91,10 @@ class IndexController extends Controller {
 						  <Url><![CDATA[".$v['Url']."]]></Url>
 						  </item>";
 			}
-			// $template .= '</Articles>
-			// 			  </xml>';
-			// $info = sprintf($template,$toUser,$FromUser,$time,'news');
-			// 	echo $info;
+			$template .= '</Articles>
+						  </xml>';
+			$info = sprintf($template,$toUser,$FromUser,$time,'news');
+				echo $info;
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
