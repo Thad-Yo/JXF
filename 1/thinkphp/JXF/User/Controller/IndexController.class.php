@@ -72,7 +72,7 @@ class IndexController extends Controller {
 					'title'=>'虎扑',
 					'Description'=>'虎扑篮球',
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-					'Url'=>'http://www.hupu.com/',
+					'Url'=>'http://nba.hupu.com/',
 					),
 				);
 		    $template =  "<xml>
