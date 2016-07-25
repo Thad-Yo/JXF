@@ -97,24 +97,26 @@ class IndexController extends Controller {
 			$toUser = $postObj->FromUserName;
 			$FromUser = $postObj->ToUserName;
 			$template =  '<xml>
-						  <ToUserName><![CDATA[toUser]]></ToUserName>
-						  <FromUserName><![CDATA[fromUser]]></FromUserName>
-						  <CreateTime>12345678</CreateTime>
-						  <MsgType><![CDATA[news]]></MsgType>
-						  <ArticleCount>2</ArticleCount>
+						  <ToUserName><![CDATA[%s]]></ToUserName>
+						  <FromUserName><![CDATA[%s]]></FromUserName>
+						  <CreateTime>%s</CreateTime>
+						  <MsgType><![CDATA[%s]]></MsgType>
+						  <ArticleCount>".count($arr)."</ArticleCount>
 						  <Articles>';
 			$arr = array(
-					'title'=>'hupu';
-					'Description'=>'hupu is very yellow';
-					'PicUrl'=>'http://www.hupu.com/';
-
+					array(
+					'title'=>'hupu',
+					'Description'=>'hupu is very yellow',
+					'PicUrl'=>'http://bbs.hupu.com/16808692.html',
+					'Url'=>'http://www.hupu.com/',
+					),
 				);
 			foreach ($arr as $key => $value) {
 			$template .= '<item>
-						  <Title><![CDATA[title1]]></Title> 
-						  <Description><![CDATA[description1]]></Description>
-						  <PicUrl><![CDATA[picurl]]></PicUrl>
-						  <Url><![CDATA[url]]></Url>
+						  <Title><![CDATA[".$value['title']."]]></Title> 
+						  <Description><![CDATA[".$value['Description']."]]></Description>
+						  <PicUrl><![CDATA[".$value['PicUrl']."]]></PicUrl>
+						  <Url><![CDATA[".$value['Url']."]]></Url>
 						  </item>';
 			}
 			$template .= '</Articles>
