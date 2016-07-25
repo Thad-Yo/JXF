@@ -63,39 +63,38 @@ class IndexController extends Controller {
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
-		if(strtolower($postObj->MsgType)=='text' && strtolower($postObj->Content) =='tuwen1'){
-			
+		if(strtolower($postObj->MsgType)=='text' && strtolower($postObj->Content) =='tuwen1'){			
 			 $toUser = $postObj->FromUserName;
-			 echo $toUser;
-			// $FromUser = $postObj->ToUserName;
-			// $time = time();
-			// $template =  '<xml>
-			// 			  <ToUserName><![CDATA[%s]]></ToUserName>
-			// 			  <FromUserName><![CDATA[%s]]></FromUserName>
-			// 			  <CreateTime>%s</CreateTime>
-			// 			  <MsgType><![CDATA[%s]]></MsgType>
-			// 			  <ArticleCount>".count($arr)."</ArticleCount>
-			// 			  <Articles>';
-			// $arr = array(
-			// 		array(
-			// 		'title'=>'hupu',
-			// 		'Description'=>'hupu is very yellow',
-			// 		'PicUrl'=>'http://bbs.hupu.com/16808692.html',
-			// 		'Url'=>'http://www.hupu.com/',
-			// 		),
-			// 	);
-			// foreach ($arr as $key => $value) {
-			// $template .= '<item>
-			// 			  <Title><![CDATA[".$value['title']."]]></Title> 
-			// 			  <Description><![CDATA[".$value['Description']."]]></Description>
-			// 			  <PicUrl><![CDATA[".$value['PicUrl']."]]></PicUrl>
-			// 			  <Url><![CDATA[".$value['Url']."]]></Url>
-			// 			  </item>';
-			// }
-			// $template .= '</Articles>
-			// 			  </xml>';
-			// $info = sprintf($template,$toUser,$FromUser,$time,'news');
-			// 	echo $info;
+			 $FromUser = $postObj->ToUserName;
+			 $time = time();
+			 $template =  '<xml>
+			 			  <ToUserName><![CDATA[%s]]></ToUserName>
+			 			  <FromUserName><![CDATA[%s]]></FromUserName>
+			 			  <CreateTime>%s</CreateTime>
+			 			  <MsgType><![CDATA[%s]]></MsgType>
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <Articles>';
+			
+			 $arr = array(
+					array(
+					'title'=>'hupu',
+					'Description'=>'hupu is very yellow',
+					'PicUrl'=>'http://bbs.hupu.com/16808692.html',
+					'Url'=>'http://www.hupu.com/',
+					),
+				);
+			foreach ($arr as $key => $value) {
+			$template .= '<item>
+						  <Title><![CDATA[".$value['title']."]]></Title> 
+						  <Description><![CDATA[".$value['Description']."]]></Description>
+						  <PicUrl><![CDATA[".$value['PicUrl']."]]></PicUrl>
+						  <Url><![CDATA[".$value['Url']."]]></Url>
+						  </item>';
+			}
+			$template .= '</Articles>
+						  </xml>';
+			$info = sprintf($template,$toUser,$FromUser,$time,'news');
+				echo $info;
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
