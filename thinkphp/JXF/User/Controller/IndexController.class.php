@@ -79,7 +79,7 @@ class IndexController extends Controller {
 					array(
 					'title'=>'hupu',
 					'Description'=>'hupu is very yellow',
-					'PicUrl'=>'http://bbs.hupu.com/16808692.html',
+					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpghttp://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 					'Url'=>'http://www.hupu.com/',
 					),
 				);
@@ -93,7 +93,7 @@ class IndexController extends Controller {
 			}
 			$template .= '</Articles>
 						  </xml>';
-			$info = sprintf($template,$toUser,$FromUser,time(),'news');
+			$info = sprintf($template,$toUser,$FromUser,$time,'news');
 			 	echo $info;
 		}
 			else{
