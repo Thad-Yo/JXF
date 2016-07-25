@@ -64,8 +64,9 @@ class IndexController extends Controller {
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
 		if(strtolower($postObj->MsgType)=='text' && strtolower($postObj->Content) =='tuwen1'){
-			echo '';
-			// $toUser = $postObj->FromUserName;
+			
+			 $toUser = $postObj->FromUserName;
+			 echo $toUser;
 			// $FromUser = $postObj->ToUserName;
 			// $time = time();
 			// $template =  '<xml>
