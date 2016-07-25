@@ -67,22 +67,21 @@ class IndexController extends Controller {
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
 			 $time = time();
+			 $arr = array(
+						array(
+							  'title'=>'hupu',
+							  'Description'=>'hupu is very yellow',
+							  'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/		  BbsImg146880770318550_1200x900.jpg',
+							  'Url'=>'http://www.hupu.com/',
+							  ),
+				);
 			 $template =  '<xml>
 			 			  <ToUserName><![CDATA[%s]]></ToUserName>
 			 			  <FromUserName><![CDATA[%s]]></FromUserName>
 			 			  <CreateTime>%s</CreateTime>
 			 			  <MsgType><![CDATA[%s]]></MsgType>
-			 			  <ArticleCount>1</ArticleCount>
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
 			 			  <Articles>';
-			
-			 $arr = array(
-					array(
-					'title'=>'hupu',
-					'Description'=>'hupu is very yellow',
-					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-					'Url'=>'http://www.hupu.com/',
-					),
-				);
 			foreach ($arr as $k => $v) {
 			$template .= "<item>
 						  <Title><![CDATA[".$v['title']."]]></Title> 
