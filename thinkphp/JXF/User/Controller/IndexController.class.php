@@ -75,13 +75,13 @@ class IndexController extends Controller {
 					'Url'=>'http://www.hupu.com/',
 					),
 				);
-		    $template =  '<xml>
+		    $template =  "<xml>
 			 			  <ToUserName><![CDATA[%s]]></ToUserName>
 			 			  <FromUserName><![CDATA[%s]]></FromUserName>
 			 			  <CreateTime>%s</CreateTime>
 			 			  <MsgType><![CDATA[%s]]></MsgType>
-			 			  <ArticleCount>1</ArticleCount>
-			 			  <Articles>';
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <Articles>";
 			foreach ($arr as $k => $v) {
 			$template .= "<item>
 						  <Title><![CDATA[".$v['title']."]]></Title> 
