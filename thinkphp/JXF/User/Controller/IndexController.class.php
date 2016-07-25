@@ -63,14 +63,14 @@ class IndexController extends Controller {
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
-		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='tuwen1'){			
+		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='虎扑'){			
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
 			 $time = time();			
 			 $arr = array(
 					array(
-					'title'=>'hupu',
-					'Description'=>'hupu is very yellow',
+					'title'=>'虎扑',
+					'Description'=>'虎扑篮球',
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 					'Url'=>'http://www.hupu.com/',
 					),
