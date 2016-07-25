@@ -93,8 +93,8 @@ class IndexController extends Controller {
 			}
 			$template .= '</Articles>
 						  </xml>';
-			$info = sprintf($template,$toUser,$FromUser,$time,'news');
-				echo $info;
+			// $info = sprintf($template,$toUser,$FromUser,$time,'news');
+			// 	echo $info;
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
