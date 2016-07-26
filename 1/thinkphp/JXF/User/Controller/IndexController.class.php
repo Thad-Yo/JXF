@@ -76,13 +76,13 @@ class IndexController extends Controller {
 					),
 					array(
 					'title'=>'虎扑',
-					'Description'=>'虎扑篮球',
+					'Description'=>'baidu',
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 					'Url'=>'http://www.baidu.com/',
 					),
 					array(
 					'title'=>'虎扑',
-					'Description'=>'虎扑篮球',
+					'Description'=>'sina',
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 					'Url'=>'http://www.sina.com/',
 					),
