@@ -184,7 +184,6 @@ class IndexController extends Controller {
 			var_dump(curl_error($ch));
 		}
 		$arr = json_decode($res,true);
-		echo "<pre>";
 		echo $arr;
 	}
 }
