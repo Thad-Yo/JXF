@@ -157,5 +157,20 @@ class IndexController extends Controller {
 		$appid = 'wx293f586c56cb5548';
 		$appsecret = '9a2d623f4037c0b68f93ff26f5fb57c7';
 		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret;
+		//2、初始化
+		$ch = curl_init();
+		//3、设置参数
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		//4、调用借口
+		$res = curl_exec($ch);
+		//5.关闭
+		curl_close($ch);
+		if(curl_errno($ch)){
+			var_dump(curl_error($ch));
+		}
+		$arr = json_decode($res,true);
+		var_dump($arr);
+
 	}
 }
