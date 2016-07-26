@@ -171,6 +171,19 @@ class IndexController extends Controller {
 		}
 		$arr = json_decode($res,true);
 		var_dump($arr);
-
+	}
+	function wxServerIp(){
+		$accessToken = "IvbE3fkjiohHsmlV_UyvTLnpx-WOKy8djcaE5c4FGZh09JgudQSF1ZuKOjw15JYtqEn2ZAQq9_tTK4lPJ2ur9DdLQGNEY908dKZ-H96MDBmEbbKmujCk41sZDbQ7lL6ZWEXdABAOWP";
+		$url = "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=".$accessToken;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$res = curl_exec($ch);
+		curl_close($ch)
+		if(curl_errno($ch)){
+			var_dump(curl_error($ch));
+		}
+		$arr = json_decode($res,true);
+		echo $arr;
 	}
 }
