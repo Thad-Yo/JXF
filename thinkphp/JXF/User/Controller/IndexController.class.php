@@ -173,7 +173,7 @@ class IndexController extends Controller {
 		var_dump($arr);
 	}
 	function wxServerIp(){
-		$accessToken = "IvbE3fkjiohHsmlV_UyvTLnpx-WOKy8djcaE5c4FGZh09JgudQSF1ZuKOjw15JYtqEn2ZAQq9_tTK4lPJ2ur9DdLQGNEY908dKZ-H96MDBmEbbKmujCk41sZDbQ7lL6ZWEXdABAOWP";
+		$accessToken = "AfeTDOuFp-OpTvErJpkyFHM4B7UEdNTNTmVNYxD88Tl18WKkRbMHCDNhRWBap5wd0b3zod0Qcyj896q4WAr8fN13MhRzEW-haRdDQWnZY7wtNZxQkHGvZ5iwXfZi_TU3WGZdAEAOYR";
 		$url = "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=".$accessToken;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
