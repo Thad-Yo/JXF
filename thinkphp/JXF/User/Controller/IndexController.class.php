@@ -144,7 +144,7 @@ class IndexController extends Controller {
 		$ch = curl_init();
 		$url = 'http://nba.hupu.com'
 		//2、设置curl的参数
-		curl_setopt($ch, CURLOPT_URL,, $url);
+		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		//3、采集
 		$output = curl_exec($ch);	
