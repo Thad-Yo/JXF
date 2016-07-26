@@ -155,8 +155,7 @@ class IndexController extends Controller {
 	function getWxAccess(){
 		//1、请求地址
 		$appid = 'wx293f586c56cb5548';
-		$appsecret = '9a2d623f4037c0b68f93ff26f5fb57c';
+		$appsecret = '9a2d623f4037c0b68f93ff26f5fb57c7';
 		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret;
-		echo $url;
 	}
 }
