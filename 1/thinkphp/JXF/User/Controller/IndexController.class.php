@@ -179,7 +179,7 @@ class IndexController extends Controller {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$res = curl_exec($ch);
-		curl_close($ch)
+		curl_close($ch);
 		if(curl_errno($ch)){
 			var_dump(curl_error($ch));
 		}
