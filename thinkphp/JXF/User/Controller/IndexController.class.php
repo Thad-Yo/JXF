@@ -74,6 +74,18 @@ class IndexController extends Controller {
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 					'Url'=>'http://nba.hupu.com/',
 					),
+					array(
+					'title'=>'虎扑',
+					'Description'=>'虎扑篮球',
+					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+					'Url'=>'http://www.baidu.com/',
+					),
+					array(
+					'title'=>'虎扑',
+					'Description'=>'虎扑篮球',
+					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+					'Url'=>'http://www.sina.com/',
+					),
 				);
 		    $template =  "<xml>
 			 			  <ToUserName><![CDATA[%s]]></ToUserName>
