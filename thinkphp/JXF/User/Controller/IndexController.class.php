@@ -70,8 +70,8 @@ class IndexController extends Controller {
 			 $arr = array(
 					array(
 					'title'=>'“比 MacBook 更轻薄”的小米笔记本，体现的是小米的新套路',
-					'Description'=>'虎扑篮球',
-					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+					'Description'=>'大海新闻',
+					'PicUrl'=>'http://www.pconline.com.cn/nbnews_pic/818/8187691_pic.html?imgsrc=http://img0.pconline.com.cn/pconline/1607/27/8187691_a1.png&channel=178',
 					'Url'=>'http://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2653799061&idx=1&sn=0a761c6f6181c43e884827f1a9217745&scene=0#wechat_redirect',
 					),
 				// 	array(
