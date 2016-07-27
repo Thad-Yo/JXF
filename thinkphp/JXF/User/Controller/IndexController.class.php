@@ -13,7 +13,7 @@ class IndexController extends Controller {
         $array = array();
         $array = array($nonce,$timestamp,$token);
         sort($array);
-        //拼接成字符串，然后雨signature进行校验
+        //拼接成字符串，然后与signature进行校验
         $str = sha1(implode($array));
         if($str == $signature && $echostr){
         	echo $echostr;
@@ -69,24 +69,24 @@ class IndexController extends Controller {
 			 $time = time();			
 			 $arr = array(
 					array(
-					'title'=>'虎扑',
+					'title'=>'“比 MacBook 更轻薄”的小米笔记本，体现的是小米的新套路',
 					'Description'=>'虎扑篮球',
 					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-					'Url'=>'http://nba.hupu.com/',
+					'Url'=>'http://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2653799061&idx=1&sn=0a761c6f6181c43e884827f1a9217745&scene=0#wechat_redirect',
 					),
-					array(
-					'title'=>'百度',
-					'Description'=>'baidu',
-					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-					'Url'=>'http://www.baidu.com/',
-					),
-					array(
-					'title'=>'新浪',
-					'Description'=>'sina',
-					'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-					'Url'=>'http://www.sina.com/',
-					),
-				);
+				// 	array(
+				// 	'title'=>'百度',
+				// 	'Description'=>'baidu',
+				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+				// 	'Url'=>'http://www.baidu.com/',
+				// 	),
+				// 	array(
+				// 	'title'=>'新浪',
+				// 	'Description'=>'sina',
+				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+				// 	'Url'=>'http://www.sina.com/',
+				// 	),
+				// );
 		    $template =  "<xml>
 			 			  <ToUserName><![CDATA[%s]]></ToUserName>
 			 			  <FromUserName><![CDATA[%s]]></FromUserName>
