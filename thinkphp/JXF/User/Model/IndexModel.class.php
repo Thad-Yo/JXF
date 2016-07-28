@@ -1,5 +1,5 @@
 <?php 
-	class IndexModel extends Model{
+	class IndexModel{
 		public function responseMsg($postObj){
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
