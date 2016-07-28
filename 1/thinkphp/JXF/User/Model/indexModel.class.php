@@ -7,6 +7,7 @@
 		
 		public function responseMsg($postObj)
 		{
+			
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
 			 $time = time();			
@@ -48,7 +49,7 @@
 			$template .= '</Articles>
 						  </xml>';
 			$info = sprintf($template,$toUser,$FromUser,$time,'news');
-			 	echo $info;# code...
+			 	echo $info;
 		}
 	}
  ?>
