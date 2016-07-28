@@ -86,7 +86,7 @@ class IndexController extends Controller {
 				// 	),
 				 );			
 				$indexModel = new indexModel();
-				$indexModel -> responseMsg($postObj,$arr);
+				$indexModel -> responseNews($postObj,$arr);
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
