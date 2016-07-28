@@ -65,7 +65,7 @@ class IndexController extends Controller {
 		//用户发送tuwen1关键字的时候，回复一个单图文
 		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕思'){			
 				$indexModel = new indexModel;
-				$indexModel->responseMsg($postObj);
+				$indexModel -> responseMsg($postObj);
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
