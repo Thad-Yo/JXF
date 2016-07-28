@@ -1,6 +1,6 @@
-<<?php 
+<?php 
 	/**
-	* \
+	* 
 	*/
 	class indexModel extends Model
 	{
@@ -49,6 +49,7 @@
 						  </xml>';
 			$info = sprintf($template,$toUser,$FromUser,$time,'news');
 			 	echo $info;
+
 		}
 	}
  ?>
