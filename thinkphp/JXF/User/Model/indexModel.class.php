@@ -30,4 +30,21 @@
 			 	echo $info;
 
 		}
+		//回复单文本
+		public function responseText($postObj,$Content){
+				$template = '<xml>
+				<ToUserName><![CDATA[%s]]></ToUserName>
+				<FromUserName><![CDATA[%s]]></FromUserName>
+				<CreateTime>%s</CreateTime>
+				<MsgType><![CDATA[%s]]></MsgType>
+				<Content><![CDATA[%s]]></Content>
+				</xml>';
+				$FromUser = $postObj->ToUserName;
+				$toUser = $postObj->FromUserName;
+				$time = time();
+				// $Content = '18578665217';
+				$MsgType = 'text';
+				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
+				echo $info;
+		}
 	}
