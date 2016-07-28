@@ -65,17 +65,10 @@ class IndexController extends Controller {
 		//用户发送tuwen1关键字的时候，回复一个单图文
 		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕思'){
 
-			$arr = array(
-					array(
-					'title'=>'慕思家具，健康睡眠资源整合者',
-					'Description'=>'慕思家具',
-					'PicUrl'=>'http://image2.cnpp.cn/		uploaimages/20160616/18062743074_390x250.jpg',
-					'Url'=>'http://www.maigoo.com/webshop/262224.ht',
-					),
-				   );		
-					//实例化模型
-					$indexModel = new indexModel;
-					$indexModel ->responseMsg($postObj,$arr);	
+				
+			//实例化模型
+			$indexModel = new indexModel;
+			$indexModel ->responseMsg($postObj);	
 
 		}
 			else{
