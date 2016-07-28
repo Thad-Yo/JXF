@@ -85,7 +85,7 @@ class IndexController extends Controller {
 				// 	'Url'=>'http://www.sina.com/',
 				// 	),
 				 );			
-				$indexModel = new indexModel;
+				$indexModel = new indexModel();
 				$indexModel -> responseMsg($postObj,$arr);
 		}
 			else{
@@ -103,20 +103,7 @@ class IndexController extends Controller {
 					$Content = '这位朋友你在讲啥子？';
 					break;
 			}
-				$template = '<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							</xml>';
-				$FromUser = $postObj->ToUserName;
-				$toUser = $postObj->FromUserName;
-				$time = time();
-				// $Content = '18578665217';
-				$MsgType = 'text';
-				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
-				echo $info;
+
 		}		
 	}
 	function http_curl(){
