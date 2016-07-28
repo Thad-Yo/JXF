@@ -71,7 +71,7 @@ class IndexController extends Controller {
 					array(
 					'title'=>'“比 MacBook 更轻薄”的小米笔记本，体现的是小米的新套路',
 					'Description'=>'大海新闻',
-					'PicUrl'=>'http://www.pconline.com.cn/nbnews_pic/818/8187691_pic.html?imgsrc=http://img0.pconline.com.cn/pconline/1607/27/8187691_a1.png&channel=178',
+					'PicUrl'=>'http://n.sinaimg.cn/tech/transform/20160727/jI30-fxuhukv7658464.jpg',
 					'Url'=>'http://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2653799061&idx=1&sn=0a761c6f6181c43e884827f1a9217745&scene=0#wechat_redirect',
 					),
 				// 	array(
