@@ -7,15 +7,15 @@
 		
 		public function responseMsg($postObj)
 		{
-			 $toUser = $postObj->FromUserName;
-			 $FromUser = $postObj->ToUserName;
-			 $time = time();			
-			 $arr = array(
-					array(
-					'title'=>'“慕思家具，健康睡眠资源整合者',
-					'Description'=>'慕思家具',
-					'PicUrl'=>'http://image2.cnpp.cn/upload/images/20160616/18062743074_390x250.jpg',
-					'Url'=>'http://www.maigoo.com/webshop/262224.html',
+		$toUser = $postObj->FromUserName;
+		$FromUser = $postObj->ToUserName;
+		$time = time();			
+		$arr = array(
+				array(
+				'title'=>'“慕思家具，健康睡眠资源整合者',
+				'Description'=>'慕思家具',
+				'PicUrl'=>'http://image2.cnpp.cn/uploadimages/20160616/18062743074_390x250.jpg',
+				'Url'=>'http://www.maigoo.com/webshop/262224.html',
 					),
 				// 	array(
 				// 	'title'=>'百度',
