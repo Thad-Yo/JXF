@@ -71,10 +71,11 @@ class IndexController extends Controller {
 					'Description'=>'慕思家具',
 					'PicUrl'=>'http://image2.cnpp.cn/		uploaimages/20160616/18062743074_390x250.jpg',
 					'Url'=>'http://www.maigoo.com/webshop/262224.ht',
-					),		
+					),
+				   );		
 					//实例化模型
 					$indexModel = new indexModel;
-					$indexModel ->responseMsg($postObj);	
+					$indexModel ->responseMsg($postObj,$arr);	
 
 		}
 			else{
