@@ -63,14 +63,16 @@ class IndexController extends Controller {
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
-		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕思'){
-
-				$arr = array(
-				array(
-				'title'=>'“慕思家具，健康睡眠资源整合者',
-				'Description'=>'慕思家具',
-				'PicUrl'=>'http://image2.cnpp.cn/uploadimages/20160616/18062743074_390x250.jpg',
-				'Url'=>'http://www.baidu.com/',
+		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕思'){			
+			 $toUser = $postObj->FromUserName;
+			 $FromUser = $postObj->ToUserName;
+			 $time = time();			
+			 $arr = array(
+					array(
+					'title'=>'“慕思家具，健康睡眠资源整合者',
+					'Description'=>'慕思家具',
+					'PicUrl'=>'http://image2.cnpp.cn/upload/images/20160616/18062743074_390x250.jpg',
+					'Url'=>'http://www.maigoo.com/webshop/262224.html',
 					),
 				// 	array(
 				// 	'title'=>'百度',
@@ -84,9 +86,26 @@ class IndexController extends Controller {
 				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 				// 	'Url'=>'http://www.sina.com/',
 				// 	),
-				 );			
-				$indexModel = new indexModel();
-				$indexModel -> responseNews($postObj,$arr);
+				 );
+		    $template =  "<xml>
+			 			  <ToUserName><![CDATA[%s]]></ToUserName>
+			 			  <FromUserName><![CDATA[%s]]></FromUserName>
+			 			  <CreateTime>%s</CreateTime>
+			 			  <MsgType><![CDATA[%s]]></MsgType>
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <Articles>";
+			foreach ($arr as $k => $v) {
+			$template .= "<item>
+						  <Title><![CDATA[".$v['title']."]]></Title> 
+						  <Description><![CDATA[".$v['Description']."]]></Description>
+						  <PicUrl><![CDATA[".$v['PicUrl']."]]></PicUrl>
+						  <Url><![CDATA[".$v['Url']."]]></Url>
+						  </item>";
+			}
+			$template .= '</Articles>
+						  </xml>';
+			$info = sprintf($template,$toUser,$FromUser,$time,'news');
+			 	echo $info;
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
@@ -104,12 +123,12 @@ class IndexController extends Controller {
 					break;
 			}
 				$template = '<xml>
-				<ToUserName><![CDATA[%s]]></ToUserName>
-				<FromUserName><![CDATA[%s]]></FromUserName>
-				<CreateTime>%s</CreateTime>
-				<MsgType><![CDATA[%s]]></MsgType>
-				<Content><![CDATA[%s]]></Content>
-				</xml>';
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							</xml>';
 				$FromUser = $postObj->ToUserName;
 				$toUser = $postObj->FromUserName;
 				$time = time();
