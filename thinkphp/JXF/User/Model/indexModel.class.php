@@ -7,34 +7,48 @@
 		
 		public function responseMsg($postObj)
 		{
-			switch ( trim($postObj->Content) ) {
-				case '电话':
-					$Content = '18578665217';
-					break;
-				case 'QQ':
-					$Content = '736602265';
-					break;				
-				case 'hupu':
-					$Content = "<a href='http://nba.hupu.com/'>虎扑</a>";
-					break;
-				default:
-					$Content = '这位朋友你在讲啥子？';
-					break;
+			 $toUser = $postObj->FromUserName;
+			 $FromUser = $postObj->ToUserName;
+			 $time = time();			
+			 $arr = array(
+					array(
+					'title'=>'“慕思家具，健康睡眠资源整合者',
+					'Description'=>'慕思家具',
+					'PicUrl'=>'http://image2.cnpp.cn/upload/images/20160616/18062743074_390x250.jpg',
+					'Url'=>'http://www.maigoo.com/webshop/262224.html',
+					),
+				// 	array(
+				// 	'title'=>'百度',
+				// 	'Description'=>'baidu',
+				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+				// 	'Url'=>'http://www.baidu.com/',
+				// 	),
+				// 	array(
+				// 	'title'=>'新浪',
+				// 	'Description'=>'sina',
+				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+				// 	'Url'=>'http://www.sina.com/',
+				// 	),
+				 );
+		    $template =  "<xml>
+			 			  <ToUserName><![CDATA[%s]]></ToUserName>
+			 			  <FromUserName><![CDATA[%s]]></FromUserName>
+			 			  <CreateTime>%s</CreateTime>
+			 			  <MsgType><![CDATA[%s]]></MsgType>
+			 			  <ArticleCount>".count($arr)."</ArticleCount>
+			 			  <Articles>";
+			foreach ($arr as $k => $v) {
+			$template .= "<item>
+						  <Title><![CDATA[".$v['title']."]]></Title> 
+						  <Description><![CDATA[".$v['Description']."]]></Description>
+						  <PicUrl><![CDATA[".$v['PicUrl']."]]></PicUrl>
+						  <Url><![CDATA[".$v['Url']."]]></Url>
+						  </item>";
 			}
-				$template = '<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							</xml>';
-				$FromUser = $postObj->ToUserName;
-				$toUser = $postObj->FromUserName;
-				$time = time();
-				// $Content = '18578665217';
-				$MsgType = 'text';
-				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
-				echo $info;
+			$template .= '</Articles>
+						  </xml>';
+			$info = sprintf($template,$toUser,$FromUser,$time,'news');
+			 	echo $info;
 
 		}
 	}
