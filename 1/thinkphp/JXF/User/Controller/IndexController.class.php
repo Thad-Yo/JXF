@@ -63,16 +63,16 @@ class IndexController extends Controller {
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
-		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='小鱼儿'){			
+		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕斯'){			
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
 			 $time = time();			
 			 $arr = array(
 					array(
-					'title'=>'“比 MacBook 更轻薄”的小米笔记本，体现的是小米的新套路',
-					'Description'=>'大海新闻',
+					'title'=>'“慕思家具，健康睡眠资源整合者',
+					'Description'=>'慕思家具',
 					'PicUrl'=>'http://n.sinaimg.cn/tech/transform/20160727/jI30-fxuhukv7658464.jpg',
-					'Url'=>'http://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2653799061&idx=1&sn=0a761c6f6181c43e884827f1a9217745&scene=0#wechat_redirect',
+					'Url'=>'http://www.maigoo.com/webshop/262224.html',
 					),
 				// 	array(
 				// 	'title'=>'百度',
