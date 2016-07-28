@@ -2,8 +2,7 @@
 	/**
 	* 
 	*/
-	class indexModel extends Model
-	{
+	class indexModel{
 		
 		public function responseMsg($postObj)
 		{
