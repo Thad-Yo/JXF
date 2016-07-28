@@ -103,7 +103,8 @@ class IndexController extends Controller {
 					$Content = '这位朋友你在讲啥子？';
 					break;
 			}
-
+			$indexModel = new indexModel();
+			$indexModel -> responseText($postObj,$Content);
 		}		
 	}
 	function http_curl(){
