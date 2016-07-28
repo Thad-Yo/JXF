@@ -23,7 +23,7 @@
 				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
 				// 	'Url'=>'http://www.sina.com/',
 				// 	),
-				 );
+				 
 		    $template =  "<xml>
 			 			  <ToUserName><![CDATA[%s]]></ToUserName>
 			 			  <FromUserName><![CDATA[%s]]></FromUserName>
