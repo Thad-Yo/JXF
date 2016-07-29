@@ -106,9 +106,6 @@ class IndexController extends Controller {
 						  </xml>';
 			$info = sprintf($template,$toUser,$FromUser,$time,'news');
 			 	echo $info;
-		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='慕思'){			
-				$IndexModel = new IndexModel;
-				$IndexModel->responseMsg($postObj);
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
