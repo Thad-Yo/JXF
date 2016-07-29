@@ -64,48 +64,8 @@ class IndexController extends Controller {
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
 		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='康工'){			
-			 $toUser = $postObj->FromUserName;
-			 $FromUser = $postObj->ToUserName;
-			 $time = time();			
-			 $arr = array(
-					array(
-					'title'=>'“比 MacBook 更轻薄”的小米笔记本，体现的是小米的新套路',
-					'Description'=>'大海新闻',
-					'PicUrl'=>'http://www.pconline.com.cn/nbnews_pic/818/8187691_pic.html?imgsrc=http://img0.pconline.com.cn/pconline/1607/27/8187691_a1.png&channel=178',
-					'Url'=>'http://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2653799061&idx=1&sn=0a761c6f6181c43e884827f1a9217745&scene=0#wechat_redirect',
-					),
-				// 	array(
-				// 	'title'=>'百度',
-				// 	'Description'=>'baidu',
-				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-				// 	'Url'=>'http://www.baidu.com/',
-				// 	),
-				// 	array(
-				// 	'title'=>'新浪',
-				// 	'Description'=>'sina',
-				// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
-				// 	'Url'=>'http://www.sina.com/',
-				// 	),
-				 );
-		    $template =  "<xml>
-			 			  <ToUserName><![CDATA[%s]]></ToUserName>
-			 			  <FromUserName><![CDATA[%s]]></FromUserName>
-			 			  <CreateTime>%s</CreateTime>
-			 			  <MsgType><![CDATA[%s]]></MsgType>
-			 			  <ArticleCount>".count($arr)."</ArticleCount>
-			 			  <Articles>";
-			foreach ($arr as $k => $v) {
-			$template .= "<item>
-						  <Title><![CDATA[".$v['title']."]]></Title> 
-						  <Description><![CDATA[".$v['Description']."]]></Description>
-						  <PicUrl><![CDATA[".$v['PicUrl']."]]></PicUrl>
-						  <Url><![CDATA[".$v['Url']."]]></Url>
-						  </item>";
-			}
-			$template .= '</Articles>
-						  </xml>';
-			$info = sprintf($template,$toUser,$FromUser,$time,'news');
-			 	echo $info;
+				$indexModel = new IndexModel;
+				$indexModel->responseMsg($postObj);
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
