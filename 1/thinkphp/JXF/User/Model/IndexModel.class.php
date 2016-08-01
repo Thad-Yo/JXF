@@ -1,6 +1,4 @@
 <?php
-namespace User\Model;
-use Think\Model;
 class IndexModel extends Model{
 		// public function responseMsg($postObj){
 		// 	 $toUser = $postObj->FromUserName;
@@ -106,3 +104,4 @@ class IndexModel extends Model{
 			echo 'xixi';
 		}
 	}
+?>
