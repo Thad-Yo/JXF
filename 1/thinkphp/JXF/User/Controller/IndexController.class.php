@@ -1,8 +1,7 @@
 <?php
-new User\Model\IndexModel();
-namespace User\Controller;
-use Think\Controller;
-class IndexController extends Controller {
+namespace User;
+new Model\IndexModel();
+class IndexController {
     public function index(){
         //1.获得参数
         $nonce = $_GET['nonce'];
