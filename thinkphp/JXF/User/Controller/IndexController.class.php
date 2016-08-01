@@ -75,7 +75,7 @@ class IndexController extends Controller {
 				case 'QQ':
 					$Content = '736602265';
 					break;				
-				case 'hupu':
+				case '哈哈':
 					$Content = "<a href='http://nba.hupu.com/'>虎扑</a>";
 					break;
 				default:
