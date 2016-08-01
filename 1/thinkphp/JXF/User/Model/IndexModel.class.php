@@ -44,7 +44,7 @@
 			$info = sprintf($template,$toUser,$FromUser,$time,'news');
 			 	echo $info;
 		}
-		public function responseText($postObj){
+		public function responseText($postObj,$Content){
 				$template = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
