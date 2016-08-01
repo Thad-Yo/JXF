@@ -1,7 +1,7 @@
 <?php
 namespace User\Controller;
 use Think\Controller;
-use User\Model\IndexModel as User;
+use Think\Model;
 class IndexController extends Controller {
     public function index(){
         //1.获得参数
