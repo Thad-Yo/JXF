@@ -1,6 +1,6 @@
 <?php
 namespace User\Controller;
-use jxf\User;
+new User\Model\IndexModel();
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
