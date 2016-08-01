@@ -1,5 +1,7 @@
-<?php 
-	class IndexModel{
+<?php
+namespace User\Model;
+use Think\Model;
+class IndexModel extends Model{
 		public function responseMsg($postObj){
 			 $toUser = $postObj->FromUserName;
 			 $FromUser = $postObj->ToUserName;
