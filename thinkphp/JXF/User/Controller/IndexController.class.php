@@ -45,21 +45,7 @@ class IndexController extends Controller {
 		if(strtolower($postObj->MsgType)=='event'){
 			//如果是关注subscribe事件
 			if(strtolower($postObj->Event) == 'subscribe'){
-				//回复用户消息
-				$toUser = $postObj->FromUserName;
-				$FromUser = $postObj->ToUserName;
-				$time = time();
-				$MsgType = 'text';
-				$Content = '我的姐姐胖小音';
-				$template = '<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							</xml>';
-				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
-				echo $info;
+
 			}
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
