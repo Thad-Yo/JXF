@@ -102,4 +102,7 @@ class IndexModel extends Model{
 				 $this->responseMsg($postObj);
 
 		}
+		public function demo1(){
+			echo 'xixi';
+		}
 	}
