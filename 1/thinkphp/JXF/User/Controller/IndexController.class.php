@@ -2,7 +2,6 @@
 namespace User\Controller;
 use jxf\User;
 use Think\Controller;
-use Think\Model;
 class IndexController extends Controller {
     public function index(){
         //1.获得参数
