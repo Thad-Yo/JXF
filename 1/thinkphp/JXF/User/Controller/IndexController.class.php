@@ -121,4 +121,8 @@ class IndexController extends Controller {
 		echo "<pre>";
 		var_dump($arr);
 	}
+	function demo(){
+		$IndexModel = new IndexModel();
+		$indexModel->demo1();
+	}
 }
