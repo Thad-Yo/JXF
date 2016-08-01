@@ -1,6 +1,6 @@
 <?php
 namespace User\Controller;
-namespace Model\IndexModel;
+namespace User\Model;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
