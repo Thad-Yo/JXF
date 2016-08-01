@@ -1,5 +1,5 @@
 <?php
-namespace User\Controller;
+namespace User;
 new User\Model\IndexModel();
 use Think\Controller;
 class IndexController extends Controller {
