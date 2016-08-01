@@ -82,8 +82,22 @@ class IndexController extends Controller {
 					$Content = '这位朋友你在讲啥子？';
 					break;
 			}
-				$IndexModel = new IndexModel();
-				$IndexModel->responseText($postObj,$Content);
+				// $IndexModel = new IndexModel();
+				// $IndexModel->responseText($postObj,$Content);
+				$template = '<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							</xml>';
+				$FromUser = $postObj->ToUserName;
+				$toUser = $postObj->FromUserName;
+				$time = time();
+				// $Content = '18578665217';
+				$MsgType = 'text';
+				$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
+				echo $info;
 		}		
 	}
 	function http_curl(){
