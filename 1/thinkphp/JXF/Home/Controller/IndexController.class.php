@@ -23,6 +23,6 @@ class IndexController extends Controller {
         }
     }
     public function demo(){
-    	echo '嘻嘻'
+    	echo '嘻嘻';
     }
 }
