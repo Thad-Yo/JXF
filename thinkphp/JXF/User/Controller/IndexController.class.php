@@ -1,6 +1,5 @@
 <?php
 namespace User;
-new Model\IndexModel();
 use Think\Controller;
 class IndexController {
     public function index(){
