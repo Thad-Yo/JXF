@@ -101,4 +101,10 @@ class IndexController extends Controller {
 	 	 		echo $info;
 	 	}		
 	 }
+	 public function demo(){
+	 	$demo = new IndexModel();
+	 	$obj = 'xixi';
+	 	$demo -> demo($obj);
+
+	 }
 }
