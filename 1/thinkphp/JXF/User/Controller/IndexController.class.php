@@ -1,6 +1,6 @@
 <?php
 use Think\Controller;
-class IndexController {
+class IndexController extends Controller {
     public function index(){
         //1.获得参数
         $nonce = $_GET['nonce'];
