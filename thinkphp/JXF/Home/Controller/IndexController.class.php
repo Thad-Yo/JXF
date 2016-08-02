@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+header('content-type:text');
 class IndexController extends Controller {
     public function index(){
         //1.获得参数
