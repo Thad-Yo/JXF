@@ -1,6 +1,5 @@
 <?php
-
-use Think\Model;
+use Think\Controller;
 class IndexController {
     public function index(){
         //1.获得参数
