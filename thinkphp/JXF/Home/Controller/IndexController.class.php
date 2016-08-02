@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+use Home\Model\IndexModel;
 header('content-type:text');
 class IndexController extends Controller {
     public function index(){
@@ -67,7 +68,7 @@ class IndexController extends Controller {
 	 	}
 	 	//用户发送tuwen1关键字的时候，回复一个单图文
 	 	if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='虎扑'){			
-	 			$indexModel = new IndexModel();
+	 			$indexModel = new IndexModel;
 	 			$indexModel -> responseNews($postObj);
 	 	}
 	 		else{
