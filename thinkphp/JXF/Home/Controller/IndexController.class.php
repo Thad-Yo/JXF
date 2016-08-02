@@ -1,5 +1,5 @@
 <?php
-namespace Home\Model;
+namespace Home\Controller;
 use Think\Controller;
 header('content-type:text');
 class IndexController extends Controller {
