@@ -3,25 +3,24 @@ use Think\Controller;
 class IndexController extends Controller {
     public function index(){
         //1.获得参数
-        // $nonce = $_GET['nonce'];
-        // $token = 'jxf';
-        // $timestamp = $_GET['timestamp'];
-        // $echostr = $_GET['echostr'];
-        // $signature = $_GET['signature'];
-        // //形成数组，按子典排序
-        // $array = array();
-        // $array = array($nonce,$timestamp,$token);
-        // sort($array);
-        // //拼接成字符串，然后与signature进行校验
-        // $str = sha1(implode($array));
-        // if($str == $signature && $echostr){
-        // 	echo $echostr;
-        // 	exit;
-        // }else{
-        // 	$this->responseMsg();
-        // }
-        $IndexModel = new IndexModel();
-		$indexModel->demo1();
+        $nonce = $_GET['nonce'];
+        $token = 'jxf';
+        $timestamp = $_GET['timestamp'];
+        $echostr = $_GET['echostr'];
+        $signature = $_GET['signature'];
+        //形成数组，按子典排序
+        $array = array();
+        $array = array($nonce,$timestamp,$token);
+        sort($array);
+        //拼接成字符串，然后与signature进行校验
+        $str = sha1(implode($array));
+        if($str == $signature && $echostr){
+        	echo $echostr;
+        	exit;
+        }else{
+        	$this->responseMsg();
+        }
+
     }
     //接受事件推送并回复
     public function responseMsg(){
@@ -51,8 +50,48 @@ class IndexController extends Controller {
 		}
 		//用户发送tuwen1关键字的时候，回复一个单图文
 		if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='虎扑'){			
-				$indexModel = new IndexModel();
-				$indexModel->responseMsg($postObj);
+		 	 $toUser = $postObj->FromUserName;
+		 	 $FromUser = $postObj->ToUserName;
+		 	 $time = time();			
+		 	 $arr = array(
+		 			 array(
+		 			'title'=>'“慕思家具，健康睡眠资源整合者',
+		 			'Description'=>'慕思家具',
+		 			'PicUrl'=>'http://image2.cnpp.cn/upload/images/20160616/18062743074_390x250.jpg',
+		 			'Url'=>'http://www.baidu.com',
+		 			 ),
+		 		// 	array(
+		 		// 	'title'=>'百度',
+		 		// 	'Description'=>'baidu',
+		 		// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+		 		// 	'Url'=>'http://www.baidu.com/',
+		 		// 	),
+		 		// 	array(
+		 		// 	'title'=>'新浪',
+		 		// 	'Description'=>'sina',
+		 		// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+		 		// 	'Url'=>'http://www.sina.com/',
+		 		// 	),
+		 		 );
+		     $template =  "<xml>
+		 	 			  <ToUserName><![CDATA[%s]]></ToUserName>
+		 	 			  <FromUserName><![CDATA[%s]]></FromUserName>
+		 	 			  <CreateTime>%s</CreateTime>
+		 	 			  <MsgType><![CDATA[%s]]></MsgType>
+		 	 			  <ArticleCount>".count($arr)."</ArticleCount>
+		 	 			  <Articles>";
+		 	foreach ($arr as $k => $v) {
+		 	$template .= "<item>
+		 				  <Title><![CDATA[".$v['title']."]]></Title> 
+		 				  <Description><![CDATA[".$v['Description']."]]></Description>
+		 				  <PicUrl><![CDATA[".$v['PicUrl']."]]></PicUrl>
+		 				  <Url><![CDATA[".$v['Url']."]]></Url>
+		 				  </item>";
+		 	}
+		 	$template .= '</Articles>
+		 				  </xml>';
+		 	$info = sprintf($template,$toUser,$FromUser,$time,'news');
+		 	 	echo $info;
 		}
 			else{
 			switch ( trim($postObj->Content) ) {
