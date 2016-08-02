@@ -1,6 +1,6 @@
 <?php
 namespace Home\Model; 
-class IndexModel extends \Think\Model{
+class IndexModel {
 	public function responseNews($postObj){
 			 $toUser = $postObj->FromUserName;
 	 	 	 $FromUser = $postObj->ToUserName;
