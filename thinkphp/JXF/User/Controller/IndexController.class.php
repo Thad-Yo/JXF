@@ -1,6 +1,6 @@
 <?php
-namespace User;
-new Model\IndexModel();
+
+use Think\Model;
 class IndexController {
     public function index(){
         //1.获得参数
