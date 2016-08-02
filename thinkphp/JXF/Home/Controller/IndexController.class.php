@@ -104,7 +104,7 @@ class IndexController extends Controller {
 	 }
 	 public function demo(){
 	 	$demo = new IndexModel();
-	 	$obj = 'xixi';
+	 	$obj = 'fuck';
 	 	$demo -> demo($obj);
 
 	 }
