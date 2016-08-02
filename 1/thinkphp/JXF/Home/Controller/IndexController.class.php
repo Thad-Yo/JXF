@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-//use Home\Model\IndexModel;
+use Home\Model\IndexModel;
 header('content-type:text');
 class IndexController extends Controller {
     public function index(){
