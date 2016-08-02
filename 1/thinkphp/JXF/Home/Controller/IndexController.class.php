@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-header('content-type:text');
+//header('content-type:text');
 class IndexController extends Controller {
     public function index(){
 		//获得参数 signature nonce token timestamp echostr
