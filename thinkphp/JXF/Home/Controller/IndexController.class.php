@@ -22,4 +22,7 @@ class IndexController extends Controller {
         	$this->responseMsg();
         }
     }
+    public function demo(){
+    	echo '嘻嘻';
+    }
 }
