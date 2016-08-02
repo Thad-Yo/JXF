@@ -44,6 +44,9 @@ class IndexModel(){
 	 	 	$info = sprintf($template,$toUser,$FromUser,$time,'news');
 	 	 	echo $info;
 	}
+	public function demo($obj){
+		echo $obj;
+	}
 }
 
  ?>
