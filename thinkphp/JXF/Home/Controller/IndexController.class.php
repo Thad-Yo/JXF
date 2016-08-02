@@ -7,7 +7,7 @@ class IndexController extends Controller {
         //1.获得参数
 		//获得参数 signature nonce token timestamp echostr
 		$nonce     = $_GET['nonce'];
-		$token     = 'imooc';
+		$token     = 'jxf';
 		$timestamp = $_GET['timestamp'];
 		$echostr   = $_GET['echostr'];
 		$signature = $_GET['signature'];
