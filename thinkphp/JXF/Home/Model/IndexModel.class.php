@@ -1,5 +1,5 @@
 <?php
-//namespace Home\Model; 
+namespace Home\Model; 
 class IndexModel {
 	public function responseNews($postObj){
 			 $toUser = $postObj->FromUserName;
