@@ -1,6 +1,7 @@
 <?php
-namespace User;
+//namespace User;
 use Think\Controller;
+use Think\Model;
 class IndexController {
     public function index(){
         //1.获得参数
