@@ -24,6 +24,6 @@ class IndexController extends Controller {
 			$this->reponseMsg();
 		}
     public function demo(){
-    	echo '嘻嘻';
+    	echo 'xx';
     }
 }
