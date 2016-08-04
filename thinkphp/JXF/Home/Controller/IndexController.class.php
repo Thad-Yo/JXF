@@ -96,7 +96,7 @@ class IndexController extends Controller {
 	 		// 		break;
 	 		// }
 	 			$ch = curl_init();
-    			$url = 'http://apis.baidu.com/apistore/weatherservice			/citylist?cityname=%E6%9C%9D%E9%98%B3';
+    			$url = 'http://apis.baidu.com/apistore/weatherservice/citylist?cityname=%E6%9C%9D%E9%98%B3';
     			$header = array(
     			    'apikey: 8b6865fc4d7d39062b46dc74858d8537',
     			);
