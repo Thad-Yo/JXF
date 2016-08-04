@@ -67,9 +67,29 @@ class IndexController extends Controller {
 	 		}
 	 	}
 	 	//用户发送tuwen1关键字的时候，回复一个单图文
-	 	if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='虎扑'){			
+	 	if(strtolower($postObj->MsgType)=='text' && trim($postObj->Content) =='hupu'|| trim($postObj->Content) =='虎扑'){	
+	 		 $arr = array(
+	 	 			 array(
+	 	 			'title'=>'“慕思家具，健康睡眠资源整合者',
+	 	 			'Description'=>'慕思家具',
+	 	 			'PicUrl'=>'http://image2.cnpp.cn/upload/images/20160616/18062743074_390x250.jpg',
+	 	 			'Url'=>'http://www.baidu.com',
+	 	 			 ),
+	 	 		// 	array(
+	 	 		// 	'title'=>'百度',
+	 	 		// 	'Description'=>'baidu',
+	 	 		// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+	 	 		// 	'Url'=>'http://www.baidu.com/',
+	 	 		// 	),
+	 	 		// 	array(
+	 	 		// 	'title'=>'新浪',
+	 	 		// 	'Description'=>'sina',
+	 	 		// 	'PicUrl'=>'http://i1.hoopchina.com.cn/blogfile/201607/18/BbsImg146880770318550_1200x900.jpg',
+	 	 		// 	'Url'=>'http://www.sina.com/',
+	 	 		// 	),
+	 	 		 );		
 	 			$indexModel = new IndexModel();
-	 			$indexModel -> responseNews($postObj);
+	 			$indexModel -> responseNews($postObj,$arr);
 	 	}
 	 		else{
 	 		switch ( trim($postObj->Content) ) {
