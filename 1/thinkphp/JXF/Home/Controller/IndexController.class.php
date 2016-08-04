@@ -99,10 +99,4 @@ class IndexController extends Controller {
 	 			$indexModel -> responseText($postObj,$Content);
 	 	}		
 	 }
-	 public function demo(){
-	 	$demo = new IndexModel();
-	 	$obj = 'fuck';
-	 	$demo -> demo($obj);
-
-	 }
 }
