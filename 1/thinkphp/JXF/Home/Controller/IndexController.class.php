@@ -51,7 +51,7 @@ class IndexController extends Controller {
 	 			//回复用户消息内容
 	 	 		 $Content = '我的姐姐胖小音';
 	 	 		 $indexModel = new IndexModel();
-	 	 		 $indexModel -> responseSubscribe()$postObj,$Content;
+	 	 		 $indexModel -> responseSubscribe($postObj,$Content);
 
 	 		}
 	 	}
