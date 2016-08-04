@@ -41,6 +41,9 @@ class IndexModel {
 	 	 		$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
 	 	 		echo $info;
 	}
+	public function responseSubscribe($postObj,$Content){
+		$this -> responseText($postObj,$Content);
+	}
 }
 
  ?>
