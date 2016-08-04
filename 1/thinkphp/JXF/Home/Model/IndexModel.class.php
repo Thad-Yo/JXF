@@ -25,8 +25,21 @@ class IndexModel {
 	 	 	$info = sprintf($template,$toUser,$FromUser,$time,'news');
 	 	 	echo $info;
 	}
-	public function demo($obj){
-		echo $obj;
+	public function responseText($postObj,$Content){
+			 	$template = '<xml>
+	 	 					<ToUserName><![CDATA[%s]]></ToUserName>
+	 	 					<FromUserName><![CDATA[%s]]></FromUserName>
+	 	 					<CreateTime>%s</CreateTime>
+	 	 					<MsgType><![CDATA[%s]]></MsgType>
+	 	 					<Content><![CDATA[%s]]></Content>
+	 	 					</xml>';
+	 	 		$FromUser = $postObj->ToUserName;
+	 	 		$toUser = $postObj->FromUserName;
+	 	 		$time = time();
+	 	 		// $Content = '18578665217';
+	 	 		$MsgType = 'text';
+	 	 		$info = sprintf($template,$toUser,$FromUser,$time,$MsgType,$Content);
+	 	 		echo $info;
 	}
 }
 
