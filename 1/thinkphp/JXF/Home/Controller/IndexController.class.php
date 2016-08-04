@@ -108,7 +108,7 @@ class IndexController extends Controller {
     			$res = curl_exec($ch);
 
     			$arr = json_decode($res,true);
-    			$Content = $arr['retData']['area_id'];
+    			$Content = $arr['retData']['name_cn'];
     			// JSON返回示例 :
 							// {
 							//     errNum: 0,
