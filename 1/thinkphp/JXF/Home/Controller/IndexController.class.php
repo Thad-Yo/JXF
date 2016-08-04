@@ -81,20 +81,84 @@ class IndexController extends Controller {
 	 			$indexModel -> responseNews($postObj,$arr);
 	 	}
 	 		else{
-	 		switch ( trim($postObj->Content) ) {
-	 			case '电话':
-	 				$Content = '18578665217';
-	 				break;
-	 			case 'QQ':
-	 				$Content = '736602265';
-	 				break;				
-	 			case '哈哈':
-	 				$Content = "<a href='http://nba.hupu.com/'>虎扑</a>";
-	 				break;
-	 			default:
-	 				$Content = '这位朋友你在讲啥子？';
-	 				break;
-	 		}
+	 		// switch ( trim($postObj->Content) ) {
+	 		// 	case '电话':
+	 		// 		$Content = '18578665217';
+	 		// 		break;
+	 		// 	case 'QQ':
+	 		// 		$Content = '736602265';
+	 		// 		break;				
+	 		// 	case '哈哈':
+	 		// 		$Content = "<a href='http://nba.hupu.com/'>虎扑</a>";
+	 		// 		break;
+	 		// 	default:
+	 		// 		$Content = '这位朋友你在讲啥子？';
+	 		// 		break;
+	 		// }
+	 			$ch = curl_init();
+    			$url = 'http://apis.baidu.com/apistore/weatherservice			/citylist?cityname=%E6%9C%9D%E9%98%B3';
+    			$header = array(
+    			    'apikey: 8b6865fc4d7d39062b46dc74858d8537',
+    			);
+    			// 添加apikey到header
+    			curl_setopt($ch, CURLOPT_HTTPHEADER  , $header);
+    			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    			// 执行HTTP请求
+    			curl_setopt($ch , CURLOPT_URL , $url);
+    			$res = curl_exec($ch);
+
+    			$arr = json_decode($res,true);
+    			$Content = $arr['retData']['area_id'];
+    			// JSON返回示例 :
+							// {
+							//     errNum: 0,
+							//     errMsg: "success",
+							//     retData: [
+							//         {
+							//             province_cn: "北京",  //省
+							//             district_cn: "北京",  //市
+							//             name_cn: "朝阳",    //区、县 
+							//             name_en: "chaoyang",  //城市拼音
+							//             area_id: "101010300"  //城市代码
+							//         },
+							//         {
+							//             province_cn: "辽宁",
+							//             district_cn: "朝阳",
+							//             name_cn: "朝阳",
+							//             name_en: "chaoyang",
+							//             area_id: "101071201"
+							//         },
+							//         {
+							//             province_cn: "辽宁",
+							//             district_cn: "朝阳",
+							//             name_cn: "凌源",
+							//             name_en: "lingyuan",
+							//             area_id: "101071203"
+							//         },
+							//         {
+							//             province_cn: "辽宁",
+							//             district_cn: "朝阳",
+							//             name_cn: "喀左",
+							//             name_en: "kazuo",
+							//             area_id: "101071204"
+							//         },
+							//         {
+							//             province_cn: "辽宁",
+							//             district_cn: "朝阳",
+							//             name_cn: "北票",
+							//             name_en: "beipiao",
+							//             area_id: "101071205"
+							//         },
+							//         {
+							//             province_cn: "辽宁",
+							//             district_cn: "朝阳",
+							//             name_cn: "建平县",
+							//             name_en: "jianpingxian",
+							//             area_id: "101071207"
+							//         }
+							//     ]
+							// }
+
 	 			$indexModel  = new IndexModel();
 	 			$indexModel -> responseText($postObj,$Content);
 	 	}		
